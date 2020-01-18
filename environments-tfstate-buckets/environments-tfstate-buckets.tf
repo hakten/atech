@@ -11,3 +11,7 @@ resource "aws_s3_bucket" "environments-tfstate-buckets" {
     enabled = true
   }
 }
+
+variable "region" {}
+variable "bucket_name" {}
+
