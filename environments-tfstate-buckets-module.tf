@@ -22,6 +22,6 @@ module "atech-tfstate-stage" {
 module "atech-tfstate-prod" {
   source = "./environments-tfstate-buckets"
   
-  region        = "us-east-2"
+  region        = "us-west-2"
   bucket_name   = "atech-tfstate-prod"
 }
