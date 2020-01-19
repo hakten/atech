@@ -22,10 +22,10 @@ module "atech-backend-dynamodb-stage" {
   project       = "atech"
 }
 
-# module "atech-backend-dynamodb-prod" {
-#   source = "./environment-backend-dynamodb-module"
+module "atech-backend-dynamodb-prod" {
+  source = "./environment-backend-dynamodb-module"
   
-#   region        = "us-west-2"
-#   name          = "atech-prod"
-#   project       = "atech"
-# }
+  region        = "us-west-2"
+  name          = "atech-prod"
+  project       = "atech"
+}
