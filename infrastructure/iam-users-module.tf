@@ -1,9 +1,5 @@
 module "iam" {
   source = "./iam-users-module"
   
-  user_names =  ["dev",
-                 "qa",
-                 "stage",
-                 "prod",
-                 ]
+  user_names =  ["dev","qa"]
 }
