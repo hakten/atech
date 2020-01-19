@@ -3,5 +3,6 @@ terraform {
     bucket = "atech-backend"
     key    = "infrastructure.tfstate"
     region = "eu-west-1"
+    dynamodb_table = "atech-backend"
   }
 }
