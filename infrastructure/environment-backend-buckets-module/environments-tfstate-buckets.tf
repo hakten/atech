@@ -17,4 +17,7 @@ resource "aws_s3_bucket" "environment-backend-buckets" {
 
 variable "region" {}
 variable "bucket_name" {}
+variable "project" {}
+
+
 
