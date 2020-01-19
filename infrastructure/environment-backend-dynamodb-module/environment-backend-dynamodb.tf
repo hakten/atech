@@ -13,3 +13,9 @@ resource "aws_dynamodb_table" "environment-backend-dynamodb" {
       Project = var.project
   }
 }
+
+variable "region" {}
+variable "name" {}
+variable "project" {}
+
+
