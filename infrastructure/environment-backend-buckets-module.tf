@@ -3,6 +3,7 @@ module "atech-backend-dev" {
   
   region        = "us-east-1"
   bucket_name   = "atech-backend-dev"
+  project       = "atech"
 }
 
 module "atech-backend-qa" {
@@ -10,6 +11,7 @@ module "atech-backend-qa" {
   
   region        = "us-east-2"
   bucket_name   = "atech-backend-qa"
+  project       = "atech"
 }
 
 module "atech-backend-stage" {
@@ -17,6 +19,7 @@ module "atech-backend-stage" {
   
   region        = "us-west-1"
   bucket_name   = "atech-backend-stage"
+  project       = "atech"
 }
 
 module "atech-backend-prod" {
@@ -24,4 +27,5 @@ module "atech-backend-prod" {
   
   region        = "us-west-2"
   bucket_name   = "atech-backend-prod"
+  project       = "atech"
 }

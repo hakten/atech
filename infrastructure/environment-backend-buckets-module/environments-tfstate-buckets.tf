@@ -10,6 +10,9 @@ resource "aws_s3_bucket" "environment-backend-buckets" {
   versioning {
     enabled = true
   }
+  tags {
+    Project     = var.project
+  }
 }
 
 variable "region" {}
