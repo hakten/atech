@@ -1,5 +1,5 @@
 resource "aws_iam_user" "developers" {
-  name  = ["dev","qa"]
+  name  = [dev,qa]
   #count = length(var.user_names)
   path  = "/"
 }
