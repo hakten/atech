@@ -20,7 +20,7 @@ resource "aws_dynamodb_table" "environment-backend-dynamodb" {
 
 variable "region" {}
 variable "name" {}
-variable "project" {}
+#variable "project" {}
 
 
 
