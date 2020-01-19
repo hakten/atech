@@ -12,7 +12,7 @@ resource "aws_dynamodb_table" "environment-backend-dynamodb" {
     name = "LockID"
     type = "S"
   }
-  tags {
+  tags = {
       Project = var.project
   }
 
