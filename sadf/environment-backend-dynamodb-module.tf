@@ -1,7 +1,7 @@
 module "atech-backend-dynamodb-dev" {
   source = "./environment-backend-dynamodb-module"
   
-  # region        = "us-east-1"
+  region        = "us-east-1"
   # name          = "atech-dev"
   # project       = "atech"
 }

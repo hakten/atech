@@ -9,7 +9,9 @@ resource "aws_dynamodb_table" "environment-backend-dynamodb" {
     name = "LockID"
     type = "S"
   }
-  tags {
-      Project = var.project
-  }
+
+}
+
+variable "region" {
+  
 }
