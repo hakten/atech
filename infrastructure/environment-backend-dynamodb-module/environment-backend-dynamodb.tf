@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_dynamodb_table" "environment-backend-dynamodb" {
-  name           = var.name
+  name      = var.name
 
   attribute {
     name = "LockID"
