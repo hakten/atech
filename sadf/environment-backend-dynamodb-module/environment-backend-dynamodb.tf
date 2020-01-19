@@ -4,6 +4,7 @@ provider "aws" {
 
 resource "aws_dynamodb_table" "environment-backend-dynamodb" {
   name      = "deneme"
+  hash_key  = "LockID"
 
   attribute {
     name = "LockID"
