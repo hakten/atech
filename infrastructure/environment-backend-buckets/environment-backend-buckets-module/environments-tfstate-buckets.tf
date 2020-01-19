@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 
-resource "aws_s3_bucket" "environments-tfstate-buckets" {
+resource "aws_s3_bucket" "environment-backend-buckets" {
   bucket = var.bucket_name
   acl    = "private"
 
