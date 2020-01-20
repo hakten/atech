@@ -19,5 +19,5 @@ resource "aws_instance" "nagios" {
 }
 
 output "nagios" {
-  value = "aws_instance.nagios.ip"
+  value = aws_instance.nagios.ip
 }
