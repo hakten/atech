@@ -6,7 +6,7 @@ data "aws_ami" "ubuntu" {
     values = ["CentOS Linux 7 x86_64 HVM EBS ENA*"]
   }
 
-  owners = ["679593333241"] # Canonical
+  owners = ["679593333241"]
 }
 
 resource "aws_instance" "nagios" {

@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "./module-vpc"
+  source = "git::https://github.com/hakten/module-vpc.git"
 
 cidr            = "${var.cidr}"
 
