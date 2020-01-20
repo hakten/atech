@@ -17,3 +17,7 @@ resource "aws_instance" "nagios" {
     Project = "atech"
   }
 }
+
+output "nagios" {
+  value = "aws_instance.nagios.ip"
+}
