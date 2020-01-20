@@ -18,6 +18,6 @@ resource "aws_instance" "nagios" {
   }
 }
 
-output "aws_instance.nagios.public_ip" {
+output "aws_instance-nagios-public_ip" {
   value = aws_instance.nagios.public_ip
 }
