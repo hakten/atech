@@ -1,0 +1,4 @@
+    bucket         = "atech-backend-dev"
+    key            = "dev-backend-infrastructure.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "atech-dev"
