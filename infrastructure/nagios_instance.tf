@@ -3,22 +3,17 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
+    values = ["CentOS Linux 7 x86_64 HVM EBS ENA*"]
   }
 
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["099720109477"] # Canonical
+  owners = ["679593333241"] # Canonical
 }
 
-resource "aws_instance" "web" {
+resource "aws_instance" "nagios" {
   ami           = "${data.aws_ami.ubuntu.id}"
   instance_type = "t2.micro"
 
   tags = {
-    Name = "HelloWorld"
+    Project = "atech"
   }
 }
