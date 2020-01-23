@@ -15,7 +15,7 @@ then
 #    backend "s3" {} 
 #    }
 #    EOF
-#    return 1 
+    return 0 
 fi 
 
 
