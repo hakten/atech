@@ -8,6 +8,8 @@ then
    return 1 
 fi 
 
+DIR=$(pwd) 
+DATAFILE="$DIR/$1" 
 if [ -z "$1" ] 
 then 
    cat EOF > "$DIR/backend.tf"
