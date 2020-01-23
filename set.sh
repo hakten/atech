@@ -10,12 +10,12 @@ fi
 
 if [ -z "$1" ] 
 then 
-   cat
-   terraform { 
-   backend "s3" {} 
-   }
-   > "$DIR/backend.tf" 
-return 1 
+   cat EOF > "$DIR/backend.tf"
+#    terraform { 
+#    backend "s3" {} 
+#    }
+#    EOF
+#    return 1 
 fi 
 
 
