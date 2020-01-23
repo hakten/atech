@@ -39,8 +39,6 @@ S3BUCKET=$(sed -nr 's/^\s*s3_bucket\s*=\s*"([^"]*)".*$/\1/p' "$DATAFILE")
 
 S3FOLDERPROJECT=$(sed -nr 's/^\s*s3_folder_project\s*=\s*"([^"]*)".*$/\1/p' "$DATAFILE")
 
-ENVIRONMENT=$(sed -nr 's/^\s*environment\s*=\s*"([^"]*)".*$/\1/p' "$DATAFILE") 
-
 S3FOLDERNAME=$(sed -nr 's/^\s*s3_folder_name\s*=\s*"([^"]*)".*$/\1/p' "$DATAFILE") 
 
 S3TFSTATEFILE=$(sed -nr 's/^\s*s3_tfstate_file\s*=\s*"([^"]*)".*$/\1/p' "$DATAFILE") 
@@ -73,16 +71,6 @@ then
   echo "setenv: 's3_folder_project' variable not set in configuration file." 
 
   return 1 
-
-fi 
-
-if [ -z "$ENVIRONMENT" ] 
-
-then 
-
-   echo "setenv: 'environment' variable not set in configuration file." 
-
-   return 1 
 
 fi 
 

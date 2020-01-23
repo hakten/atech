@@ -1,0 +1,4 @@
+    bucket         = "terraform-s3-backend-dev"
+    key            = "backend-infrastructure.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "atech-dev"
