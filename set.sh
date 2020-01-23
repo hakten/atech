@@ -1,23 +1,22 @@
 #!/bin/bash 
 
+DIR=$(pwd) 
+DATAFILE="$DIR/$1" 
+
+if [ -z "$1" ] 
+then 
+   echo "terraform { " > backend.tf 
+   echo "backend "s3" {" >> backend.tf
+   echo "}" >> backend.tf 
+   return 0
+fi
+
 echo $0 
 if [ "$0" = "$BASH_SOURCE" ] 
 then 
    echo "$0: Please source this file." 
    echo "e.g. source ./setenv environments/data-rnd-us-vet1-v1" 
    return 1 
-fi 
-
-DIR=$(pwd) 
-DATAFILE="$DIR/$1" 
-if [ -z "$1" ] 
-then 
-   cat EOF > "$DIR/backend.tf"
-#    terraform { 
-#    backend "s3" {} 
-#    }
-#    EOF
-    return 0 
 fi 
 
 
