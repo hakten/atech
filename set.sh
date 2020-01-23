@@ -7,7 +7,8 @@ if [ -z "$1" ]
 then 
    echo "terraform { " > backend.tf 
    echo "backend \"s3\" {}" >> backend.tf
-   echo "}" >> backend.tf 
+   echo "}" >> backend.tf
+   cat backend.tf
    return 0
 fi
 
