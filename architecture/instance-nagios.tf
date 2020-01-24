@@ -6,7 +6,7 @@ resource "aws_instance" "nagios" {
   
 
   tags = {
-    Name        = Nagios
+    Name        = "Nagios"
     Project     = var.project
     Environment = var.environment
   }

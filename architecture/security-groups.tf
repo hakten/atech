@@ -21,7 +21,7 @@ resource "aws_security_group" "ssh" {
 resource "aws_security_group" "web" { 
   name        = "web" 
   description = "Allow web inbound traffic" 
-  vpc_id      = aws_vpc.vpc.id
+  vpc_id      = module.vpc.vpc_id
 
   ingress { 
     from_port   = 80
