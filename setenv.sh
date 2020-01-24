@@ -108,9 +108,10 @@ fi
 cat << EOF > "$DIR/backend.tf" 
 terraform { 
 backend "s3" { 
+region = "${S3BUCKETREGION}" 
 bucket = "${S3BUCKET}" 
 key = "${S3FOLDERPROJECT}/${S3FOLDERNAME}/${S3TFSTATEFILE}" 
-region = "${S3BUCKETREGION}" 
+
   } 
 } 
 EOF
