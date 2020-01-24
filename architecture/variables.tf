@@ -13,3 +13,7 @@ variable "public_subnets" {
 variable "private_subnets" {
     type = "list"
 }
+
+variable "bastion_public_ip" {
+  
+}
