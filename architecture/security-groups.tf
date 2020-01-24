@@ -52,7 +52,7 @@ resource "aws_security_group" "nagios_client" {
     from_port   = 5693
     to_port     = 5693
     protocol    = "tcp" 
-    cidr_blocks = [aws_instance.nagios.public_ip]
+    cidr_blocks = ["${aws_instance.nagios.public_ip}"/32]
 } 
   egress { 
     from_port       = 0 
