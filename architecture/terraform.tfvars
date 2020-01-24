@@ -12,7 +12,7 @@ private_subnets = []
 
 #IAM
 iam_group_name          = "baytech"
-iam_group_policy_name   = "Admin"     #enter as "Admin" or "PowerUserAccess"
+iam_group_policy_name   = "PowerUserAccess"     #enter as "Admin" or "PowerUserAccess"
 iam_users               = ["Baytech1","Baytech2"]   #enter user names as list
 
 #Security group
