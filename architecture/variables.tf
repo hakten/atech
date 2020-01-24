@@ -14,6 +14,10 @@ variable "private_subnets" {
     type = "list"
 }
 
-variable "bastion_public_ip" {
-  
+variable "iam_group_name" {}
+variable "iam_group_policy_name" {}
+variable "iam_users" {
+    type = "list"
 }
+
+variable "bastion_public_ip" {}
