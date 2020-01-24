@@ -9,7 +9,7 @@ resource "aws_instance" "ansible" {
       host        = self.public_ip
       type        = "ssh"
       user        = var.user
-      private_key = file(var.ssh_key_location)
+      private_key = file(~/.ssh/id_rsa)
       }
       inline = [
         "sudo yum install -y epel-release",
