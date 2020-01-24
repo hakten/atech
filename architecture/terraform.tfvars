@@ -18,7 +18,7 @@ iam_group_name          = "baytech"
 iam_group_policy_name   = "PowerUserAccess"
 
 #enter user names as list
-iam_users               = ["Baytech1","Baytech2"]   
+iam_users               = ["User1","User2"]   
 
 
 #for ssh security group ingress rule cidr
