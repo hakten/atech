@@ -14,9 +14,8 @@ resource "aws_instance" "ansible" {
       inline = [
         "sudo yum install -y epel-release",
         "sudo rpm -Uvh https://assets.nagios.com/downloads/ncpa/ncpa-latest.el7.x86_64.rpm",
-        "sed -i 's/community_string = mytoken/community_string = evolvecyber/g' /usr/local/ncpa/etc/ncpa.cfg",
+        "sudo sed -i 's/community_string = mytoken/community_string = evolvecyber/g' /usr/local/ncpa/etc/ncpa.cfg",
         "sudo service ncpa_listener restart",
-        "systemctl enable ncpa_listener",
         ]
       } 
 
