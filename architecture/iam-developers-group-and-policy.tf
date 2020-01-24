@@ -18,7 +18,7 @@ resource "aws_iam_user" "users" {
 resource "aws_iam_group_membership" "membership" {
   name = "group-membership"
   count = "${length(var.iam_users)}"
-  users = element(aws_iam_user.users.*.name,count.index)
+  users = [element(aws_iam_user.users.*.name,count.index)]
 
   group = "${aws_iam_group.group.name}"
 }
