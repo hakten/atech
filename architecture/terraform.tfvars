@@ -10,12 +10,18 @@ azs             = ["eu-west-1a","eu-west-1b","eu-west-1c"]
 public_subnets  = ["10.0.1.0/24","10.0.2.0/24","10.0.3.0/24"]
 private_subnets = []
 
-#IAM
-iam_group_name          = "baytech"
-iam_group_policy_name   = "PowerUserAccess"     #enter as "Admin" or "PowerUserAccess"
-iam_users               = ["Baytech1","Baytech2"]   #enter user names as list
 
-#Security group
+#iam
+iam_group_name          = "baytech"
+
+#enter as "AdministratorAccess" or "PowerUserAccess" etc.
+iam_group_policy_name   = "PowerUserAccess"
+
+#enter user names as list
+iam_users               = ["Baytech1","Baytech2"]   
+
+
+#for ssh security group ingress rule cidr
 bastion_public_ip = "0.0.0.0/0"
 
 
