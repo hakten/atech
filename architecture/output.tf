@@ -17,3 +17,7 @@ output "private_subnets" {
 output "aws_instance_nagios_public_ip" {
   value = aws_instance.nagios.public_ip
 }
+
+output "aws_instance_ansible_public_ip" {
+  value = aws_instance.ansible.public_ip
+}
