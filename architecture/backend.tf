@@ -1,8 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "atech-backend"
-    key    = "infrastructure.tfstate"
+    bucket = "t-s3-backend"
+    key    = "baytech/arch/infrastructure.tfstate"
     region = "eu-west-1"
-    dynamodb_table = "atech-backend"
   }
 }

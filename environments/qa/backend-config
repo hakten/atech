@@ -1,4 +1,0 @@
-    bucket         = "atech-backend-qa"
-    key            = "backend-infrastructure.tfstate"
-    region         = "us-east-2"
-    dynamodb_table = "atech-qa"

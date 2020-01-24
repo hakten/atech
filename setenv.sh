@@ -8,6 +8,15 @@ then
    return 1 
 fi 
 
+# if [ -z "$1" ] 
+# then 
+#    echo "terraform { " > backend.tf 
+#    echo "backend \"s3\" {}" >> backend.tf
+#    echo "}" >> backend.tf
+#    cat backend.tf
+#    return 0
+# fi
+
 if [ -z "$1" ] 
 then 
    echo "setenv: You must provide the name of the configuration file." 
