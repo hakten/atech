@@ -1,6 +1,6 @@
 
 resource "aws_iam_group" "group" {
-  name = var.aws_iam_group_name
+  name = var.iam_group_name
 }
 
 
