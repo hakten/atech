@@ -25,7 +25,7 @@ iam_users               = ["User1","User2"]
 bastion_public_ip = "0.0.0.0/0"
 
 #username for ssh
-user = centos
+user = "centos"
 
 
 
