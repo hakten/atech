@@ -21,3 +21,5 @@ variable "iam_users" {
 }
 
 variable "bastion_public_ip" {}
+variable "user" {}
+

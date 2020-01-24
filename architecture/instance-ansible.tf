@@ -4,7 +4,21 @@ resource "aws_instance" "ansible" {
   key_name      = aws_key_pair.bastion_key.key_name
   subnet_id     = module.vpc.public_subnets[1]
   vpc_security_group_ids = [aws_security_group.ssh.id,aws_security_group.web.id]
-  
+  provisioner "remote-exec" {
+    connection {
+      host        = self.public_ip
+      type        = "ssh"
+      user        = var.user
+      private_key = file(var.ssh_key_location)
+      }
+      inline = [
+        "sudo yum install -y epel-release",
+        "sudo rpm -Uvh https://assets.nagios.com/downloads/ncpa/ncpa-latest.el7.x86_64.rpm",
+        "sed -i 's/community_string = mytoken/community_string = evolvecyber/g' /usr/local/ncpa/etc/ncpa.cfg",
+        "sudo service ncpa_listener restart",
+        "systemctl enable ncpa_listener",
+        ]
+      } 
 
   tags = {
     Name        = "Ansible"
