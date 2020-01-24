@@ -7,7 +7,7 @@ resource "aws_security_group" "ssh" {
     from_port   = 22 
     to_port     = 22 
     protocol    = "tcp" 
-    cidr_blocks = "${var.bastion_public_ip}"   
+    cidr_blocks = [var.bastion_public_ip]  
 
 } 
   egress { 
@@ -43,21 +43,21 @@ ingress {
   } 
 }
 
-# resource "aws_security_group" "nagios_client" { 
-#   name        = "nagios_client" 
-#   description = "Allow db inbound traffic" 
-#   vpc_id      = aws_vpc.vpc.id
+resource "aws_security_group" "nagios_client" { 
+  name        = "nagios_client" 
+  description = "Allow db inbound traffic" 
+  vpc_id      = aws_vpc.vpc.id
 
-#   ingress { 
-#     from_port   = 3306
-#     to_port     = 3306
-#     protocol    = "tcp" 
-#     cidr_blocks = ["0.0.0.0/0"]   
-# } 
-#   egress { 
-#     from_port       = 0 
-#     to_port         = 0 
-#     protocol        = "-1" 
-#     cidr_blocks     = ["0.0.0.0/0"] 
-#   } 
-# }
+  ingress { 
+    from_port   = 5693
+    to_port     = 5693
+    protocol    = "tcp" 
+    cidr_blocks = ["0.0.0.0/0"]   
+} 
+  egress { 
+    from_port       = 0 
+    to_port         = 0 
+    protocol        = "-1" 
+    cidr_blocks     = ["0.0.0.0/0"] 
+  } 
+}
