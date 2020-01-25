@@ -22,8 +22,8 @@ resource "aws_iam_user_login_profile" "users" {
 
 resource "aws_iam_group_membership" "membership" {
   name = "group-membership"
-  count = length(var.iam_users)
-  users = [aws_iam_user.users[count.index].name]
+#  count = length(var.iam_users)
+  users = [aws_iam_user.users[*].name]
 
   group = aws_iam_group.group.name
 }
