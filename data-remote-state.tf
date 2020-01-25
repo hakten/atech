@@ -7,10 +7,6 @@ data "terraform_remote_state" "main" {
 }
 }
 
-# output "full_list" { 
-#   value = data.terraform_remote_state.main.* 
-# } 
-
-output "nagios" { 
-  value = "${data.terraform_remote_state.main.nagios_public_ip}"
+output "full_list" { 
+  value = data.terraform_remote_state.main.* 
 } 
