@@ -1,6 +1,6 @@
-resource "aws_security_group" "ssh" { 
-  name        = "ssh" 
-  description = "Allow SSH inbound traffic" 
+resource "aws_security_group" "ssh_bastion" { 
+  name        = "ssh_bastion" 
+  description = "Allow SSH inbound from bastion" 
   vpc_id      = module.vpc.vpc_id
 
   ingress { 
@@ -8,7 +8,25 @@ resource "aws_security_group" "ssh" {
     to_port     = 22 
     protocol    = "tcp" 
     cidr_blocks = ["${var.bastion_public_ip}/32"]  
+} 
+  egress { 
+    from_port       = 0 
+    to_port         = 0 
+    protocol        = "-1" 
+    cidr_blocks     = ["0.0.0.0/0"] 
+  } 
+} 
 
+resource "aws_security_group" "ssh_ansible" { 
+  name        = "ssh_ansible" 
+  description = "Allow SSH inbound from ansible" 
+  vpc_id      = module.vpc.vpc_id
+
+  ingress { 
+    from_port   = 22 
+    to_port     = 22 
+    protocol    = "tcp" 
+    cidr_blocks = ["${aws_instance.ansible.public_ip}/32"]  
 } 
   egress { 
     from_port       = 0 
