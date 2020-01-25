@@ -11,6 +11,6 @@ output "full_list" {
   value = data.terraform_remote_state.main.* 
 } 
 
-output "remote_vpc_id" { 
-  value = "${data.terraform_remote_state.main.vpc_id}"
+output "nagios" { 
+  value = "${data.terraform_remote_state.main.aws_instance.nagios.public_ip}"
 } 
