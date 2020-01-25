@@ -1,6 +1,6 @@
 data "terraform_remote_state" "main" {
-  backend = "s3"
-  config = {
+  backend  = "s3"
+  config   = {
     region = "eu-west-1"
     bucket = "t-s3-backend"
     key    = "baytech/arch/infrastructure.tfstate"

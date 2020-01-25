@@ -15,3 +15,14 @@ variable "iam_users" {}
 variable "bastion_public_ip" {}
 variable "user" {}
 
+variable "zone_id" {}
+variable "domain" {}
+variable "bastion_subdomain" {}
+
+
+
+
+
+
+
+
