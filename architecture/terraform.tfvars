@@ -22,7 +22,7 @@ iam_users               = ["User1","User2"]
 
 
 #for ssh security group ingress rule cidr
-bastion_public_ip = "0.0.0.0/0"
+bastion_public_ip = "0.0.0.0"
 
 #username for ssh
 user = "centos"
