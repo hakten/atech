@@ -10,3 +10,7 @@ data "terraform_remote_state" "main" {
 output "full_list" { 
   value = data.terraform_remote_state.main.* 
 } 
+
+output "bastion_public_ip" { 
+  value = data.terraform_remote_state.main.bastion_public_ip
+} 

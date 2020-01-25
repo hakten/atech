@@ -7,7 +7,7 @@ resource "aws_security_group" "ssh_bastion" {
     from_port   = 22 
     to_port     = 22 
     protocol    = "tcp" 
-    cidr_blocks = ["${data.terraform_remote_state.main.bastion_public_ip}"]  
+    cidr_blocks = ["${data.terraform_remote_state.main.bastion_public_ip}/32"]  
 
 } 
   egress { 
