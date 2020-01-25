@@ -14,6 +14,10 @@ output "private_subnets" {
   value = "${module.vpc.private_subnets}"
 }
 
+output "password" {
+  value = "${aws_iam_user_login_profile.users.*.encrypted_password}"
+}
+
 output "data_ami" {
   value = data.aws_ami.centos.id
 }
