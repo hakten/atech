@@ -21,7 +21,7 @@ resource "aws_instance" "instance" {
       } 
 
   tags = {
-    Name        = "Ansible"
+    Name        = "${var.project}-${var.environment}"
     Project     = var.project
     Environment = var.environment
   }
