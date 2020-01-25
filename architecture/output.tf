@@ -14,7 +14,7 @@ output "private_subnets" {
   value = "${module.vpc.private_subnets}"
 }
 
-output "password" {
+output "passwords" {
   value = "${aws_iam_user_login_profile.users.*.encrypted_password}"
 }
 
