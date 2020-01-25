@@ -54,6 +54,12 @@ resource "aws_security_group" "nagios_client" {
     protocol    = "tcp" 
     cidr_blocks = ["${aws_instance.nagios.public_ip}/32"]
 } 
+  ingress { 
+    from_port   = 0
+    to_port     = 0
+    protocol    = "icmp" 
+    cidr_blocks = ["${aws_instance.nagios.public_ip}/32"]
+}
   egress { 
     from_port       = 0 
     to_port         = 0 
