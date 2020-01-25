@@ -12,5 +12,5 @@ output "full_list" {
 } 
 
 output "bastion_public_ip" { 
-  value = data.terraform_remote_state.main.bastion_public_ip
+  value = data.terraform_remote_state.main.bastion.public_ip
 } 
