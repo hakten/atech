@@ -1,7 +1,7 @@
 resource "aws_instance" "instance" {
   ami               = data.terraform_remote_state.main.outputs.data_ami
   instance_type     = var.instance_type
-  key_name          = aws_key_pair.bastion_key.key_name
+  key_name          = data.terraform_remote_state.main.outputs.bastion_key.key_name
   subnet_id         = module.vpc.public_subnets[1]
   vpc_security_group_ids = [aws_security_group.ssh_bastion.id,aws_security_group.ssh_ansible.id,aws_security_group.web.id,aws_security_group.nagios_client.id]
   

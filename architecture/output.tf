@@ -14,7 +14,7 @@ output "private_subnets" {
   value = "${module.vpc.private_subnets}"
 }
 
-output "key_pair_name" {
+output "bastion_key_name" {
   value = aws_key_pair.bastion_key.key_name
 }
 
