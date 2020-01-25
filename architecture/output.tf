@@ -15,7 +15,7 @@ output "private_subnets" {
 }
 
 output "data_ami" {
-  value = data.aws_ami.centos
+  value = data.aws_ami.centos.id
 }
 
 output "nagios_public_ip" {
