@@ -7,7 +7,7 @@ resource "aws_security_group" "ssh_bastion" {
     from_port   = 22 
     to_port     = 22 
     protocol    = "tcp" 
-    cidr_blocks = ["${data.terraform_remote_state.bastion_public_ip}/32"]  
+    cidr_blocks = ["${data.terraform_remote_state.main.bastion_public_ip}/32"]  
 
 } 
   egress { 
@@ -27,7 +27,7 @@ resource "aws_security_group" "ssh_ansible" {
     from_port   = 22 
     to_port     = 22 
     protocol    = "tcp" 
-    cidr_blocks = ["${data.terraform_remote_state.ansible_public_ip}/32"]  
+    cidr_blocks = ["${data.terraform_remote_state.main.ansible_public_ip}/32"]  
 
 } 
   egress { 
@@ -72,13 +72,13 @@ resource "aws_security_group" "nagios_client" {
     from_port   = 5693
     to_port     = 5693
     protocol    = "tcp" 
-    cidr_blocks = ["${data.terraform_remote_state.ansible_public_ip}/32"]
+    cidr_blocks = ["${data.terraform_remote_state.main.ansible_public_ip}/32"]
 } 
   ingress { 
     from_port   = 0
     to_port     = 0
     protocol    = "icmp" 
-    cidr_blocks = ["${data.terraform_remote_state.ansible_public_ip}/32"]
+    cidr_blocks = ["${data.terraform_remote_state.main.ansible_public_ip}/32"]
 }
   egress { 
     from_port       = 0 
