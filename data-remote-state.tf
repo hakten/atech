@@ -1,4 +1,4 @@
-data "terraform_remote_state" "arch" {
+data "terraform_remote_state" "main" {
   backend = "s3"
   config = {
     region = "eu-west-1"
@@ -7,10 +7,10 @@ data "terraform_remote_state" "arch" {
 }
 }
 
-output "full_list" { 
-  value = data.terraform_remote_state.arch.* 
-} 
+# output "full_list" { 
+#   value = data.terraform_remote_state.main.* 
+# } 
 
 output "nagios" { 
-  value = "${data.terraform_remote_state.arch.nagios_public_ip}"
+  value = "${data.terraform_remote_state.main.nagios_public_ip}"
 } 
