@@ -10,14 +10,14 @@ resource "aws_iam_group_policy_attachment" "group-attachment" {
 }
 
 resource "aws_iam_user" "users" {
-  count = "${length(var.iam_users)}"
+  count = length(var.iam_users)
   name  = var.iam_users[count.index]
 }
 
 
 resource "aws_iam_group_membership" "membership" {
   name = "group-membership"
-  count = "${length(var.iam_users)}"
+  count = length(var.iam_users)
   users = [aws_iam_user.users[count.index].name]
 
   group = "${aws_iam_group.group.name}"

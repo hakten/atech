@@ -4,21 +4,13 @@ variable "cidr" {}
 variable "project" {}
 variable "environment" {}
 
-variable "azs" {
-    type = "list"
-}
-variable "public_subnets" {
-    type = "list"
-}
-variable "private_subnets" {
-    type = "list"
-}
+variable "azs" {}
+variable "public_subnets" {}
+variable "private_subnets" {}
 
 variable "iam_group_name" {}
 variable "iam_group_policy_name" {}
-variable "iam_users" {
-    type = "list"
-}
+variable "iam_users" {}
 
 variable "bastion_public_ip" {}
 variable "user" {}
