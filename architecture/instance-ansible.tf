@@ -3,7 +3,7 @@ resource "aws_instance" "ansible" {
   instance_type = "t2.micro"
   key_name      = aws_key_pair.bastion_key.key_name
   subnet_id     = module.vpc.public_subnets[1]
-  vpc_security_group_ids = [aws_security_group.ssh.id,aws_security_group.web.id]
+  vpc_security_group_ids = [aws_security_group.ssh_bastion.id,aws_security_group.web.id]
   provisioner "remote-exec" {
     connection {
       host        = self.public_ip
