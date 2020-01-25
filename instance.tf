@@ -9,7 +9,7 @@ resource "aws_instance" "instance" {
     connection {
       host          = self.public_ip
       type          = "ssh"
-      user          = var.user
+      user          = data.terraform_remote_state.main.outputs.user
       private_key   = file("~/.ssh/id_rsa")
       }
       inline = [
