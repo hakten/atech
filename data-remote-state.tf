@@ -12,5 +12,5 @@ output "full_list" {
 } 
 
 output "nagios" { 
-  value = "${data.terraform_remote_state.main.aws_instance.nagios.public_ip}"
+  value = "${data.terraform_remote_state.main.nagios_public_ip}"
 } 
