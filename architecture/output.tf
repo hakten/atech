@@ -14,6 +14,11 @@ output "private_subnets" {
   value = "${module.vpc.private_subnets}"
 }
 
+output "key_pair_name" {
+  value = aws_key_pair.bastion_key.key_name
+}
+
+
 output "passwords" {
   value = "${aws_iam_user_login_profile.users.*.encrypted_password}"
 }
