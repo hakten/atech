@@ -17,7 +17,7 @@ resource "aws_iam_user" "users" {
 resource "aws_iam_user_login_profile" "users" {
   user    = "${aws_iam_user.users[count.index].name}"
   count   = length(var.iam_users)
-  pgp_key = "username"
+  pgp_key = "keybase:username"
 }
 
 resource "aws_iam_group_membership" "membership" {
