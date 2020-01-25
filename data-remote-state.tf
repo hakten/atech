@@ -11,6 +11,6 @@ output "full_list" {
   value = data.terraform_remote_state.main.* 
 } 
 
-output "bastion_public_ip" { 
-  value = data.terraform_remote_state.main.aws_instance.ansible.public_ip
+output "vpc_id" { 
+  value = data.terraform_remote_state.main.vpc_id
 } 
