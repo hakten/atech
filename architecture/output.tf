@@ -22,14 +22,9 @@ output "passwords" {
   value = "${aws_iam_user_login_profile.users.*.encrypted_password}"
 }
 
-output "data_ami" {
-  value = data.aws_ami.centos.id
-}
-
 output "user" {
   value = var.user
 }
-
 
 output "nagios_public_ip" {
   value = aws_instance.nagios.public_ip

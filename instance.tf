@@ -1,5 +1,5 @@
 resource "aws_instance" "instance" {
-  ami               = data.terraform_remote_state.main.outputs.data_ami
+  ami               = data.aws_ami.centos.id
   instance_type     = var.instance_type
   key_name          = data.terraform_remote_state.main.outputs.bastion_key_name
   subnet_id         = module.vpc.public_subnets[1]
