@@ -11,6 +11,6 @@ output "full_list" {
   value = data.terraform_remote_state.main.* 
 } 
 
-output "vpc_id" { 
+output "remote_vpc_id" { 
   value = data.terraform_remote_state.main.vpc_id
 } 
